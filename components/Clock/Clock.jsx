@@ -11,7 +11,7 @@ export function Clock() {
       setTime(nowToHHMM());
     }, 1000);
   }, []);
-  return () => clearInterval(intervalId);
+  /* return () => clearInterval(intervalId);*/
 
   return (
     <>

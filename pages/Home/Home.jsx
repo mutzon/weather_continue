@@ -20,7 +20,7 @@ export function Home({ weather }) {
         <Txt>SearchBar</Txt>
       </View>
       <View style={s.meteo_advanced}>
-        <Txt>Advanded Weather info</Txt>
+        <Txt>Advanced Weather info</Txt>
       </View>
     </>
   );

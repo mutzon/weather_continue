@@ -6,6 +6,8 @@ export function Txt({ children, style, ...restProps }) {
   const { height } = useWindowDimensions();
   console.log("height", 1 / height);
   console.log(fontSize * 0.001123234916559692 * height);
+  const windowsDimensions = useWindowDimensions();
+  console.log("useWindowDimensions", windowsDimensions);
 
   return (
     <Text

@@ -4,10 +4,10 @@ export function Txt({ children, style, ...restProps }) {
   const ANDROID_MEDIUM_SIZE = 0.001123234916559692;
   const fontSize = style?.fontSize || s.txt.fontSize;
   const { height } = useWindowDimensions();
-  console.log("height", 1 / height);
-  console.log(fontSize * 0.001123234916559692 * height);
+  //console.log("height", 1 / height);
+  //console.log(fontSize * 0.001123234916559692 * height);
   const windowsDimensions = useWindowDimensions();
-  console.log("useWindowDimensions", windowsDimensions);
+  //console.log("useWindowDimensions", windowsDimensions);
 
   return (
     <Text

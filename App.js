@@ -18,6 +18,7 @@ import { useFonts } from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
+
 const navTheme = {
   colors: {
     background: "transparent",
@@ -77,7 +78,10 @@ export default function App() {
           <SafeAreaView style={s.container}>
             {isFontLoaded && weather && (
               <Stack.Navigator
-                screenOptions={{ headerShown: false }}
+                screenOptions={{
+                  headerShown: false,
+                  animation: "fade",
+                }}
                 initialRouteName="Home"
               >
                 <Stack.Screen name="Home">

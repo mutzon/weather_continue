@@ -13,6 +13,7 @@ export function Home({ weather, city }) {
     <>
       <View style={s.meteo_basic}>
         <MeteoBasic
+          dailyWeather={weather.daily}
           city={city}
           interpretation={currentInterpretation}
           temperature={Math.round(currentWeather.temperature)}
@@ -23,10 +24,10 @@ export function Home({ weather, city }) {
       </View>
       <View style={s.meteo_advanced}>
         <MeteoAdvanced
-          sunrise={weather.daily.sunrise[1].split("T")[1]}
+          sunrise={weather.daily.sunrise[0].split("T")[1]}
           sunset={weather.daily.sunset[0].split("T")[1]}
           windspeed={currentWeather.windspeed}
-        ></MeteoAdvanced>
+        />
       </View>
     </>
   );

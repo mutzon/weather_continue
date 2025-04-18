@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native";
 
-export const s = StyleSheet.create({
+const s = StyleSheet.create({
   input: {
     backgroundColor: "white",
     height: 40,
+    paddingLeft: 20,
     borderRadius: 20,
     fontFamily: "Alata-Regular",
     shadowColor: "#000",
@@ -17,3 +18,5 @@ export const s = StyleSheet.create({
     elevation: 5,
   },
 });
+
+export { s };

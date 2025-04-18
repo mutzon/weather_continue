@@ -4,6 +4,7 @@ import { s } from "./Header.style.js";
 import { useNavigation } from "@react-navigation/native";
 
 export function Header({ city }) {
+  console.log("city", city);
   const nav = useNavigation();
   return (
     <View style={s.container}>

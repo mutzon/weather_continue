@@ -12,6 +12,8 @@ export function Forecasts({}) {
   const forecastList = (
     <View style={{ marginTop: 50 }}>
       {params.time.map((time, index) => {
+        console.log("time", time);
+        console.log("index", index);
         const weatherCode = params.weathercode[index];
         const image = getWeatherInterpretation(weatherCode).image;
         const temperature = params.temperature_2m_max[index];

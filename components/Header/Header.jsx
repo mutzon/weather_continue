@@ -12,7 +12,7 @@ export function Header({ city }) {
         <Txt>{"<"}</Txt>
       </TouchableOpacity>
       <View style={s.header_txts}>
-        <Txt>{city.toUpperCase()}</Txt>
+        <Txt>{city}</Txt>
         <Txt style={s.subtitle}>7 day Forecast</Txt>
       </View>
     </View>

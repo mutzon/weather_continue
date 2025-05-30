@@ -17,6 +17,7 @@ import { MeteoAPI } from "./api/meteo";
 import { useFonts } from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Alert } from "react-native";
 const Stack = createNativeStackNavigator();
 
 const navTheme = {
@@ -54,6 +55,15 @@ export default function App() {
     setCity(cityResponse);
   }
 
+  async function fetchCoordsbyCity(city) {
+    try {
+      const coordsResponse = await MeteoAPI.fetchCoordsByCity(city);
+      setCoordinates(coordsResponse);
+    } catch (err) {
+      Alert.alert("Byen blev ikke fundet", "Prøv venligst igen");
+    }
+  }
+
   async function getUserCoordinates() {
     const { status } = await requestForegroundPermissionsAsync();
     if (status === "granted") {
@@ -85,7 +95,13 @@ export default function App() {
                 initialRouteName="Home"
               >
                 <Stack.Screen name="Home">
-                  {() => <Home city={city} weather={weather} />}
+                  {() => (
+                    <Home
+                      city={city}
+                      weather={weather}
+                      onSubmitSearch={fetchCoordsbyCity}
+                    />
+                  )}
                 </Stack.Screen>
                 <Stack.Screen name="Forecasts" component={Forecasts} />
               </Stack.Navigator>

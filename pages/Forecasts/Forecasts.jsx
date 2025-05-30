@@ -3,8 +3,8 @@ import { Txt } from "../../components/Txt/Txt.jsx";
 import { useRoute } from "@react-navigation/native";
 import { Header } from "../../components/Header/Header.jsx";
 import { ForecastListItem } from "../../components/ForecastListItem/ForecastListItem.jsx";
-import { Image, View } from "react-native";
-import { getWeatherInterpretation } from "../../utils/meteo-utils.js";
+import { View } from "react-native";
+import { DAYS, getWeatherInterpretation } from "../../utils/meteo-utils.js";
 
 export function Forecasts({}) {
   const { params } = useRoute();
@@ -38,13 +38,11 @@ export function Forecasts({}) {
       })}
     </View>
   );
-  console.log(params);
+
   return (
     <>
-      <Header city={params.city}></Header>
+      <Header city={params.city} />
       {forecastList}
     </>
   );
 }
-
-export const DAYS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];

@@ -4,6 +4,7 @@ import { s } from "./Header.style.js";
 import { useNavigation } from "@react-navigation/native";
 
 export function Header({ city }) {
+  console.log("city", city);
   const nav = useNavigation();
   return (
     <View style={s.container}>
@@ -11,7 +12,7 @@ export function Header({ city }) {
         <Txt>{"<"}</Txt>
       </TouchableOpacity>
       <View style={s.header_txts}>
-        <Txt>{city.toUpperCase()}</Txt>
+        <Txt>{city}</Txt>
         <Txt style={s.subtitle}>7 day Forecast</Txt>
       </View>
     </View>
